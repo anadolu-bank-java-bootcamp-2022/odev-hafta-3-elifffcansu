@@ -1,7 +1,10 @@
 package com.gokhantamkoc.javabootcamp.odevhafta3.util;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class TimeUtils {
 	private final static SimpleDateFormat UTC_DATE = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -21,8 +24,12 @@ public class TimeUtils {
 
 	public static Date convertToDate(long millis) {
 		// Bu metodu doldurmanizi bekliyoruz.
-		Date dt = new Date(); 
-		return dt;
+		DateFormat obj = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z");   
+		// we create instance of the Date and pass milliseconds to the constructor    
+		Date date=new Date(millis);
+		obj.format(date);
+		return date;
+
 		
 	}
 }
