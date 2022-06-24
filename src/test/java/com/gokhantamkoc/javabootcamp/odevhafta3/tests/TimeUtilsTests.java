@@ -2,7 +2,7 @@ package com.gokhantamkoc.javabootcamp.odevhafta3.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Calendar;
+
 import java.util.Date;
 
 import org.junit.Test;

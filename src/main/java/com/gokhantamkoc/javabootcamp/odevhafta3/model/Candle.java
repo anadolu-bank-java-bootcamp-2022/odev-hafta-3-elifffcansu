@@ -1,7 +1,5 @@
 package com.gokhantamkoc.javabootcamp.odevhafta3.model;
 
-import java.util.List;
-
 public class Candle {
 	private long time;
 	private double open;
@@ -56,6 +54,4 @@ public class Candle {
 		this.volume = volume;
 	}
 
-	public static void add(List<String> asList) {
-	}
 }

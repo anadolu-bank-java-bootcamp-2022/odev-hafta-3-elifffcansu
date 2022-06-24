@@ -6,10 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.gokhantamkoc.javabootcamp.odevhafta3.model.Candle;
+import com.gokhantamkoc.javabootcamp.odevhafta3.util.TimeUtils;
+
+import ch.qos.logback.core.util.TimeUtil;
+
 
 public class CryptoDataCSVRepository implements CSVRepository {
 	
@@ -20,15 +23,29 @@ public class CryptoDataCSVRepository implements CSVRepository {
 		List<Candle> candles = new ArrayList<Candle>();
 		InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(filename);
 		// Bu alandan itibaren kodunuzu yazabilirsiniz
-       
+		
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+		
 			String line;
+			br.readLine();
 			while ((line = br.readLine()) != null) {
+				//unix,date,symbol,open,high,low,close,volume,tradecount	
 				String[] values = line.split(COMMA_DELIMITER);
-				Candle.add(Arrays.asList(values));
+				
+				Candle candleObject=new Candle(0, 0, 0, 0, 0, 0);	
+				candleObject.setTime(TimeUtils.converToLong(values[1]));
+				candleObject.setOpen(Double.parseDouble(values[3]));
+				candleObject.setHigh(Double.parseDouble(values[4]));
+				candleObject.setLow(Double.parseDouble(values[5]));
+				candleObject.setClose(Double.parseDouble(values[6]));
+				candleObject.setVolume(Double.parseDouble(values[7]));
+				
+				candles.add(candleObject);
+				
 			}
+			br.close();
 		}
-
+		
 		// Bu alandan sonra kalan kod'a dokunmayiniz.
 		return candles;
 	}

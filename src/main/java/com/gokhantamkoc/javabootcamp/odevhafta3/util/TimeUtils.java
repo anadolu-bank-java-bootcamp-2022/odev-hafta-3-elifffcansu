@@ -22,13 +22,22 @@ public class TimeUtils {
 
 	public static Date convertToDate(long millis) {
 		// Bu metodu doldurmanizi bekliyoruz.
-		DateFormat obj = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z");   
-		// we create instance of the Date and pass milliseconds to the constructor    
 		
-		Date date=new Date(millis);
-	  
-		return 	date;
+		// we create instance of the Date and pass milliseconds to the constructor   
+		Date date = new Date(millis);	
+	return date;
 		
 		
+	}
+	public static Long converToLong(String date){
+		
+		long milliseconds = 0;
+		try {
+    		Date d = UTC_DATE.parse(date);
+    		milliseconds = d.getTime();
+		}catch (Exception e) {
+    		e.printStackTrace();
+	}
+	return milliseconds;
 	}
 }
