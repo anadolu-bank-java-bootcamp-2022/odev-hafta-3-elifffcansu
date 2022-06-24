@@ -34,7 +34,7 @@ public class CryptoDataCSVRepository implements CSVRepository {
 				
 				Candle candleObject=new Candle(0, 0, 0, 0, 0, 0);	
 
-				candleObject.setTime(Long.parseLong((values[0])));
+				candleObject.setTime(Long.parseLong(values[0]));
 				candleObject.setOpen(Double.parseDouble(values[3]));
 				candleObject.setHigh(Double.parseDouble(values[4]));
 				candleObject.setLow(Double.parseDouble(values[5]));
