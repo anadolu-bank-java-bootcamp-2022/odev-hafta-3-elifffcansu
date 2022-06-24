@@ -27,10 +27,13 @@ public class CryptoDataCSVRepository implements CSVRepository {
 			br.readLine();
 			
 			while ((line = br.readLine()) != null) {
+
 				//unix,date,symbol,open,high,low,close,volume,tradecount	
+
 				String[] values = line.split(COMMA_DELIMITER);
 				
 				Candle candleObject=new Candle(0, 0, 0, 0, 0, 0);	
+
 				candleObject.setTime(Long.parseLong((values[0])));
 				candleObject.setOpen(Double.parseDouble(values[3]));
 				candleObject.setHigh(Double.parseDouble(values[4]));

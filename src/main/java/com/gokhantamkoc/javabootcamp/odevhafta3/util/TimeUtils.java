@@ -1,6 +1,5 @@
 package com.gokhantamkoc.javabootcamp.odevhafta3.util;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -22,25 +21,12 @@ public class TimeUtils {
 
 	public static Date convertToDate(long millis) {
 		// Bu metodu doldurmanizi bekliyoruz.
-		
-		// we create instance of the Date and pass milliseconds to the constructor   
+		 
 		Date date = new Date(millis);	
-
 		
 	return date;
 		
 		
 	}
 
-	/*public static Long converToLong(String date){
-		
-		long milliseconds = 0;
-		try {
-    		Date d = UTC_DATE.parse(date);
-    		milliseconds = d.getTime();
-		}catch (Exception e) {
-    		e.printStackTrace();
-	}
-	return milliseconds;
-	}*/
 }
