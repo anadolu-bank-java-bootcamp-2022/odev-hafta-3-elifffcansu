@@ -29,7 +29,8 @@ public class TimeUtils {
 		
 		
 	}
-	public static Long converToLong(String date){
+
+	/*public static Long converToLong(String date){
 		
 		long milliseconds = 0;
 		try {
@@ -39,5 +40,5 @@ public class TimeUtils {
     		e.printStackTrace();
 	}
 	return milliseconds;
-	}
+	}*/
 }
