@@ -2,16 +2,13 @@ package com.gokhantamkoc.javabootcamp.odevhafta3.repository;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.gokhantamkoc.javabootcamp.odevhafta3.model.Candle;
-import com.gokhantamkoc.javabootcamp.odevhafta3.util.TimeUtils;
-
-import ch.qos.logback.core.util.TimeUtil;
 
 
 public class CryptoDataCSVRepository implements CSVRepository {
@@ -24,10 +21,11 @@ public class CryptoDataCSVRepository implements CSVRepository {
 		InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(filename);
 		// Bu alandan itibaren kodunuzu yazabilirsiniz
 		
-		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 		
 			String line;
 			br.readLine();
+			
 			while ((line = br.readLine()) != null) {
 				//unix,date,symbol,open,high,low,close,volume,tradecount	
 				String[] values = line.split(COMMA_DELIMITER);

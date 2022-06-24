@@ -21,7 +21,7 @@ public class ChartService {
 		CandleStickChart candleStickChart =new CandleStickChart("BTC/USTD Chart");
 
 		try {
-			List<Candle> candles= this.cryptoDataCSVRepository.readCSV("/Users/elif/github-classroom/anadolu-bank-java-bootcamp-2022/odev-hafta-3-elifffcansu/src/main/resources/Binance_BTCUSDT_d.csv");
+			List<Candle> candles= this.cryptoDataCSVRepository.readCSV("Binance_BTCUSDT_d.csv");
 			for(Candle candle:candles){
 				candleStickChart.addCandle(candle.getTime(),candle.getOpen(),candle.getHigh(),candle.getLow(),candle.getClose(),candle.getVolume());
 			}
